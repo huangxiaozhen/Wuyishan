@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>武夷山团建 · 出行手册 2026.06.26-28</title>
+<style>
+/* ============ 设计令牌 · 青绿山水 ============ */
+:root{
+  --ink:#1f3a2e;          /* 墨绿（主文字）*/
+  --ink-soft:#3d5a4a;
+  --jade:#2d6a4f;         /* 翠青（主色）*/
+  --jade-deep:#1b4332;
+  --jade-light:#52b788;
+  --celadon:#95d5b2;      /* 青瓷 */
+  --mist:#d8f3dc;         /* 雾青 */
+  --paper:#f7f4ea;        /* 宣纸 */
+  --paper-2:#efe9d6;
+  --vermilion:#c1432e;    /* 朱砂（点缀/印章）*/
+  --gold:#b8860b;
+  --muted:#6b7a6f;
+  --line:rgba(31,58,46,.14);
+  --shadow:0 10px 30px rgba(27,67,50,.12);
+  --shadow-lg:0 20px 60px rgba(27,67,50,.18);
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC",sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.serif{font-family:"STSong","SimSun","Songti SC","Noto Serif SC",serif;font-weight:700}
+
+/* ============ 山峦 SVG 装饰 ============ */
+.mountain-bg{
+  position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+}
+
+/* ============ 导航 ============ */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(247,244,234,.88);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;padding:12px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--jade-deep)}
+.brand .stamp{
+  display:inline-grid;place-items:center;width:34px;height:34px;
+  background:var(--vermilion);color:#fff;border-radius:7px;font-size:18px;
+  font-family:"STSong",serif;box-shadow:0 3px 8px rgba(193,67,46,.35);
+}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{
+  text-decoration:none;color:var(--ink-soft);font-size:14px;
+  padding:7px 12px;border-radius:9px;transition:.2s;white-space:nowrap;
+}
+.nav-links a:hover{background:var(--mist);color:var(--jade-deep)}
+
+/* ============ 容器 ============ */
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+section{padding:72px 0;position:relative;z-index:1}
+.section-head{text-align:center;margin-bottom:44px}
+.section-head .kicker{
+  display:inline-block;font-size:13px;letter-spacing:3px;color:var(--jade);
+  background:var(--mist);padding:5px 16px;border-radius:50px;margin-bottom:14px;
+}
+.section-head h2{font-size:34px;color:var(--jade-deep);letter-spacing:2px}
+.section-head p{color:var(--muted);margin-top:10px;font-size:15px}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;min-height:92vh;display:grid;place-items:center;
+  text-align:center;padding:60px 24px;overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(149,213,178,.45), transparent 60%),
+    linear-gradient(180deg, var(--mist) 0%, var(--paper) 70%);
+}
+.hero-content{position:relative;z-index:2;max-width:760px}
+.hero .date-row{
+  display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center;
+  font-size:14px;color:var(--jade);letter-spacing:1px;margin-bottom:20px;
+}
+.hero .date-row span{background:rgba(255,255,255,.7);padding:6px 14px;border-radius:50px;border:1px solid var(--line)}
+.hero h1{
+  font-size:clamp(40px,7vw,76px);color:var(--jade-deep);letter-spacing:6px;
+  line-height:1.15;margin-bottom:8px;
+}
+.hero .sub{
+  font-size:clamp(16px,2.4vw,20px);color:var(--ink-soft);letter-spacing:8px;margin-bottom:6px;
+}
+.hero .meta{
+  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:28px 0 36px;
+  font-size:15px;color:var(--ink-soft);
+}
+.hero .meta b{color:var(--jade-deep)}
+.cta-primary{
+  display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+  font-size:19px;font-weight:700;color:#fff;background:var(--jade);
+  padding:16px 38px;border:none;border-radius:50px;letter-spacing:2px;
+  box-shadow:0 12px 30px rgba(45,106,79,.4);transition:.25s;font-family:inherit;
+}
+.cta-primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(45,106,79,.5);background:var(--jade-deep)}
+.cta-primary .arrow{transition:.25s}
+.cta-primary:hover .arrow{transform:translateX(5px)}
+.scroll-hint{margin-top:50px;color:var(--muted);font-size:13px;animation:bob 2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+/* ============ 启程打卡模块 ============ */
+.journey-card{
+  background:#fff;border-radius:24px;box-shadow:var(--shadow-lg);
+  padding:44px;max-width:760px;margin:0 auto;border:1px solid var(--line);
+}
+.journey-step{text-align:center}
+.journey-step h3{font-size:24px;color:var(--jade-deep);margin-bottom:8px}
+.journey-step p{color:var(--muted);margin-bottom:24px}
+.city-pick{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.city-btn{
+  cursor:pointer;border:2px solid var(--line);background:var(--paper);
+  border-radius:18px;padding:24px 28px;min-width:200px;text-align:left;
+  transition:.22s;font-family:inherit;
+}
+.city-btn:hover{border-color:var(--jade-light);transform:translateY(-4px);box-shadow:var(--shadow)}
+.city-btn .from{font-size:13px;color:var(--muted)}
+.city-btn .city{font-size:22px;font-weight:700;color:var(--jade-deep);margin:4px 0}
+.city-btn .train{font-size:14px;color:var(--vermilion);font-weight:700}
+
+/* 打卡进度条 */
+.track{
+  position:relative;max-width:560px;margin:0 auto;padding:8px 0;
+}
+.track-line{
+  position:absolute;left:28px;top:8px;bottom:8px;width:3px;
+  background:var(--mist);border-radius:3px;
+}
+.track-line .fill{
+  position:absolute;top:0;left:0;width:100%;height:0%;
+  background:linear-gradient(180deg,var(--jade-light),var(--jade));
+  border-radius:3px;transition:height .6s ease;
+}
+.track-item{
+  position:relative;padding:14px 0 14px 70px;opacity:0;transform:translateX(-12px);
+  transition:.5s;
+}
+.track-item.show{opacity:1;transform:translateX(0)}
+.track-dot{
+  position:absolute;left:18px;top:18px;width:23px;height:23px;border-radius:50%;
+  background:#fff;border:3px solid var(--mist);z-index:2;transition:.4s;
+}
+.track-item.show .track-dot{border-color:var(--jade);background:var(--jade-light)}
+.track-item.done .track-dot{background:var(--jade);border-color:var(--jade)}
+.track-item.done .track-dot::after{content:"✓";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:13px;font-weight:700}
+.track-time{font-size:12px;color:var(--vermilion);font-weight:700;letter-spacing:1px}
+.track-title{font-size:16px;font-weight:700;color:var(--ink);margin:2px 0}
+.track-desc{font-size:13px;color:var(--muted)}
+.arrived-banner{
+  display:none;text-align:center;margin-top:30px;padding:24px;border-radius:18px;
+  background:linear-gradient(135deg,var(--mist),#fff);border:1px dashed var(--jade-light);
+}
+.arrived-banner.show{display:block;animation:pop .5s ease}
+@keyframes pop{0%{transform:scale(.9);opacity:0}100%{transform:scale(1);opacity:1}}
+.arrived-banner h3{font-size:26px;color:var(--jade-deep);margin-bottom:8px}
+.arrived-banner .go-explore{
+  display:inline-block;margin-top:14px;cursor:pointer;color:#fff;background:var(--vermilion);
+  padding:12px 28px;border-radius:50px;font-weight:700;letter-spacing:1px;border:none;
+  font-family:inherit;font-size:15px;transition:.22s;
+}
+.arrived-banner .go-explore:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(193,67,46,.4)}
+.replay-btn{
+  display:block;margin:24px auto 0;cursor:pointer;background:none;border:none;
+  color:var(--muted);font-size:13px;text-decoration:underline;font-family:inherit;
+}
+
+/* ============ 景点卡片 ============ */
+.spots-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px;
+}
+.spot-card{
+  background:#fff;border-radius:var(--radius);overflow:hidden;cursor:pointer;
+  border:1px solid var(--line);transition:.25s;display:flex;flex-direction:column;
+  box-shadow:0 4px 14px rgba(27,67,50,.06);
+}
+.spot-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--jade-light)}
+.spot-banner{
+  height:120px;display:grid;place-items:center;font-size:54px;position:relative;
+  background:linear-gradient(135deg,var(--mist),var(--celadon));
+}
+.spot-banner.b2{background:linear-gradient(135deg,#ffe8d6,#ffc8a2)}
+.spot-banner.b3{background:linear-gradient(135deg,#cfe8ff,#a5d8ff)}
+.spot-banner.b4{background:linear-gradient(135deg,#f0d9ff,#d8b3ff)}
+.spot-banner.b5{background:linear-gradient(135deg,#2d2d2d,#5a3a3a);color:#ffd700}
+.spot-banner.b6{background:linear-gradient(135deg,#e0f5d8,#b8e6a8)}
+.spot-banner.b7{background:linear-gradient(135deg,#fff3c4,#ffd966)}
+.spot-banner .day-tag{
+  position:absolute;top:10px;right:10px;background:rgba(255,255,255,.92);
+  font-size:11px;padding:3px 10px;border-radius:20px;color:var(--jade-deep);font-weight:700;
+}
+.spot-body{padding:18px 20px;flex:1;display:flex;flex-direction:column}
+.spot-body h3{font-size:19px;color:var(--jade-deep);margin-bottom:4px}
+.spot-body .tagline{font-size:13px;color:var(--vermilion);margin-bottom:10px;font-weight:600}
+.spot-body .snip{font-size:13.5px;color:var(--ink-soft);flex:1}
+.spot-body .more{
+  margin-top:12px;font-size:13px;color:var(--jade);font-weight:700;display:flex;align-items:center;gap:4px;
+}
+
+/* ============ 模态框 ============ */
+.modal-mask{
+  position:fixed;inset:0;background:rgba(15,30,22,.55);backdrop-filter:blur(4px);
+  z-index:200;display:none;place-items:center;padding:24px;
+}
+.modal-mask.open{display:grid;animation:fade .25s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.modal{
+  background:var(--paper);border-radius:22px;max-width:620px;width:100%;max-height:86vh;
+  overflow-y:auto;box-shadow:var(--shadow-lg);animation:rise .3s ease;border:1px solid var(--line);
+}
+@keyframes rise{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal-head{
+  padding:32px 32px 20px;text-align:center;position:relative;
+  background:linear-gradient(180deg,var(--mist),transparent);
+}
+.modal-head .big-emoji{font-size:50px;margin-bottom:8px}
+.modal-head h3{font-size:26px;color:var(--jade-deep);margin-bottom:4px}
+.modal-head .tagline{color:var(--vermilion);font-weight:600}
+.modal-head .day{font-size:12px;color:var(--muted);margin-top:6px}
+.modal-close{
+  position:absolute;top:14px;right:14px;cursor:pointer;background:#fff;border:none;
+  width:34px;height:34px;border-radius:50%;font-size:18px;color:var(--ink-soft);
+  box-shadow:0 2px 8px rgba(0,0,0,.1);transition:.2s;
+}
+.modal-close:hover{background:var(--vermilion);color:#fff;transform:rotate(90deg)}
+.modal-body{padding:8px 32px 32px}
+.modal-body h4{color:var(--jade-deep);font-size:16px;margin:18px 0 8px;display:flex;align-items:center;gap:6px}
+.modal-body ul{list-style:none;padding-left:4px}
+.modal-body li{
+  padding:7px 0 7px 22px;position:relative;font-size:14.5px;color:var(--ink-soft);
+  border-bottom:1px dashed var(--line);
+}
+.modal-body li:last-child{border-bottom:none}
+.modal-body li::before{content:"❖";position:absolute;left:0;color:var(--jade-light);font-size:12px;top:8px}
+.modal-body li b{color:var(--ink)}
+
+/* ============ 行程时间轴 ============ */
+.timeline{position:relative;max-width:860px;margin:0 auto;padding-left:40px}
+.timeline::before{
+  content:"";position:absolute;left:14px;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,var(--jade-light),var(--mist));border-radius:3px;
+}
+.day-block{margin-bottom:42px;position:relative}
+.day-block::before{
+  content:"";position:absolute;left:-33px;top:6px;width:18px;height:18px;border-radius:50%;
+  background:var(--vermilion);border:3px solid #fff;box-shadow:0 0 0 3px var(--vermilion);
+}
+.day-label{font-size:18px;font-weight:700;color:var(--vermilion);margin-bottom:14px;letter-spacing:1px}
+.day-label small{color:var(--muted);font-weight:400;font-size:13px;margin-left:8px}
+.event{
+  background:#fff;border-radius:12px;padding:14px 18px;margin-bottom:10px;
+  border-left:4px solid var(--jade-light);box-shadow:0 2px 8px rgba(0,0,0,.04);
+  display:flex;gap:14px;align-items:flex-start;transition:.2s;
+}
+.event:hover{transform:translateX(4px);box-shadow:var(--shadow)}
+.event .ev-time{
+  font-size:13px;font-weight:700;color:var(--jade);min-width:54px;
+  background:var(--mist);padding:4px 8px;border-radius:8px;text-align:center;height:fit-content;
+}
+.event .ev-title{font-weight:700;color:var(--ink);font-size:15px}
+.event .ev-note{font-size:13px;color:var(--muted);margin-top:2px}
+
+/* ============ 通用卡片网格 ============ */
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.info-card{
+  background:#fff;border-radius:var(--radius);padding:26px;border:1px solid var(--line);
+  box-shadow:0 4px 14px rgba(27,67,50,.05);
+}
+.info-card h3{color:var(--jade-deep);font-size:19px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.info-card .ic{font-size:22px}
+.info-card p,.info-card li{font-size:14px;color:var(--ink-soft)}
+.info-card ul{list-style:none;padding:0}
+.info-card li{padding:5px 0 5px 20px;position:relative}
+.info-card li::before{content:"•";position:absolute;left:6px;color:var(--jade-light);font-weight:700}
+
+/* 交通表 */
+.train-table{
+  width:100%;border-collapse:collapse;background:#fff;border-radius:var(--radius);
+  overflow:hidden;box-shadow:0 4px 14px rgba(27,67,50,.06);font-size:14px;
+}
+.train-table th{
+  background:var(--jade-deep);color:#fff;padding:14px;text-align:left;font-weight:600;
+}
+.train-table td{padding:13px 14px;border-bottom:1px solid var(--line);color:var(--ink-soft)}
+.train-table tr:last-child td{border-bottom:none}
+.train-table tr:hover td{background:var(--mist)}
+.train-table .train-no{color:var(--vermilion);font-weight:700}
+.train-section-title{
+  display:flex;align-items:center;gap:8px;font-size:18px;color:var(--jade-deep);
+  margin:30px 0 14px;font-weight:700;
+}
+
+/* 名单表 */
+.roster-wrap{overflow-x:auto;border-radius:var(--radius);box-shadow:0 4px 14px rgba(27,67,50,.06)}
+.roster{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px;min-width:560px}
+.roster th{background:var(--jade);color:#fff;padding:11px;text-align:left;font-weight:600;position:sticky;top:0}
+.roster td{padding:10px 11px;border-bottom:1px solid var(--line);color:var(--ink-soft)}
+.roster tr:nth-child(even) td{background:var(--paper)}
+.roster .no{color:var(--muted);font-weight:700;text-align:center;width:40px}
+.roster .name{color:var(--jade-deep);font-weight:700}
+.roster .train{color:var(--vermilion);font-weight:600}
+
+/* 话题矩阵 */
+.topic-matrix{overflow-x:auto;border-radius:var(--radius);box-shadow:0 4px 14px rgba(27,67,50,.06)}
+.topic-matrix table{width:100%;border-collapse:collapse;background:#fff;min-width:560px;font-size:14px}
+.topic-matrix th{background:var(--jade-deep);color:#fff;padding:14px;text-align:left}
+.topic-matrix th:first-child{width:130px}
+.topic-matrix td{padding:13px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);color:var(--ink-soft);vertical-align:top}
+.topic-matrix td:first-child{font-weight:700;background:var(--mist);color:var(--jade-deep)}
+.topic-matrix .empty{color:var(--muted);text-align:center}
+
+/* 串场建议 */
+.cue-list{display:grid;gap:12px;max-width:760px;margin:0 auto}
+.cue{
+  background:#fff;border-radius:12px;padding:16px 20px;border-left:4px solid var(--gold);
+  box-shadow:0 2px 8px rgba(0,0,0,.04);display:flex;gap:16px;align-items:center;
+}
+.cue .cue-when{font-weight:700;color:var(--gold);min-width:120px;font-size:14px}
+.cue .cue-say{color:var(--ink-soft);font-size:14.5px;font-style:italic}
+
+/* 快速查看 */
+.quick-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.quick-item{
+  background:#fff;border-radius:12px;padding:18px;border:1px solid var(--line);
+  display:flex;gap:12px;align-items:flex-start;transition:.2s;
+}
+.quick-item:hover{border-color:var(--jade-light);transform:translateY(-3px);box-shadow:var(--shadow)}
+.quick-item .qi{font-size:24px}
+.quick-item .qt{font-size:13px;color:var(--muted)}
+.quick-item .qv{font-size:14.5px;color:var(--ink);font-weight:600;margin-top:2px}
+
+/* footer */
+footer{
+  background:var(--jade-deep);color:var(--mist);text-align:center;padding:40px 24px;
+  position:relative;z-index:1;
+}
+footer .stamp-big{
+  display:inline-grid;place-items:center;width:60px;height:60px;background:var(--vermilion);
+  color:#fff;border-radius:10px;font-size:30px;font-family:"STSong",serif;margin-bottom:14px;
+  box-shadow:0 6px 18px rgba(193,67,46,.5);
+}
+footer h3{color:#fff;font-size:22px;margin-bottom:6px;letter-spacing:3px}
+footer p{font-size:13px;opacity:.8}
+
+/* ============ 汉堡菜单按钮（默认隐藏，移动端显示）============ */
+.nav-toggle{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:42px;height:42px;background:var(--paper);border:1px solid var(--line);
+  border-radius:10px;cursor:pointer;padding:0;
+}
+.nav-toggle span{display:block;width:20px;height:2px;background:var(--jade-deep);margin:0 auto;transition:.25s;border-radius:2px}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ============ 响应式断点 ============ */
+/* 平板及以下：768px */
+@media(max-width:768px){
+  .nav-toggle{display:flex}
+  .nav-links{
+    position:fixed;top:66px;left:0;right:0;
+    flex-direction:column;background:rgba(247,244,234,.98);
+    backdrop-filter:blur(12px);padding:14px 20px;gap:4px;
+    border-bottom:1px solid var(--line);
+    transform:translateY(-130%);opacity:0;pointer-events:none;
+    transition:.3s cubic-bezier(.2,.7,.3,1);z-index:99;
+    max-height:calc(100vh - 66px);overflow-y:auto;
+  }
+  .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto}
+  .nav-links a{padding:12px 14px;font-size:15px;border-radius:10px}
+  .nav-links a:hover{background:var(--mist)}
+}
+
+/* 手机端：680px */
+@media(max-width:680px){
+  section{padding:54px 0}
+  .wrap{padding:0 18px}
+  .section-head{margin-bottom:34px}
+  .section-head h2{font-size:27px;letter-spacing:1px}
+  .section-head p{font-size:14px}
+  .hero{min-height:88vh;padding:48px 20px}
+  .hero h1{letter-spacing:3px}
+  .hero .sub{letter-spacing:4px}
+  .hero .meta{font-size:14px;gap:10px}
+  .hero .meta span{background:rgba(255,255,255,.7);padding:5px 12px;border-radius:50px}
+  .cta-primary{font-size:17px;padding:15px 30px;letter-spacing:1px}
+  .journey-card{padding:28px 20px;border-radius:18px}
+  .city-btn{min-width:0;width:100%;padding:20px}
+  /* 景点卡片双列 */
+  .spots-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .spot-banner{height:96px;font-size:42px}
+  .spot-body{padding:14px 15px}
+  .spot-body h3{font-size:16px}
+  .spot-body .snip{font-size:12.5px}
+  .modal{border-radius:18px}
+  .modal-head{padding:26px 22px 16px}
+  .modal-head .big-emoji{font-size:42px}
+  .modal-head h3{font-size:22px}
+  .modal-body{padding:8px 22px 26px}
+  /* 时间轴 */
+  .timeline{padding-left:30px}
+  .day-block::before{left:-26px;width:15px;height:15px}
+  .event{padding:12px 14px;gap:10px}
+  .event .ev-time{min-width:48px;font-size:12px;padding:3px 6px}
+  .event .ev-title{font-size:14px}
+}
+
+/* 小手机：480px */
+@media(max-width:480px){
+  .brand{font-size:15px}
+  .brand .stamp{width:30px;height:30px;font-size:16px}
+  .hero h1{font-size:42px;letter-spacing:2px}
+  .hero .sub{font-size:14px;letter-spacing:2px}
+  .hero .meta{flex-direction:column;gap:8px}
+  .hero .meta span{width:100%;text-align:center}
+  .section-head h2{font-size:23px}
+  /* 景点卡片单列 */
+  .spots-grid{grid-template-columns:1fr}
+  .spot-banner{height:110px;font-size:48px}
+  /* 名单/话题表格：基础信息卡片化 */
+  .roster{font-size:12.5px}
+  .roster th,.roster td{padding:8px 7px}
+  .topic-matrix td,.topic-matrix th{padding:10px 8px;font-size:12.5px}
+  /* 行程事件：时间标签缩小 */
+  .event{flex-wrap:wrap}
+  .event .ev-time{min-width:auto}
+  /* 串场建议堆叠 */
+  .cue{flex-direction:column;gap:6px}
+  .cue .cue-when{min-width:auto}
+  /* 启程打卡步骤 */
+  .track-item{padding-left:60px}
+  .track-line{left:24px}
+  .track-dot{left:14px}
+  /* 快速查看双列 */
+  .quick-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .quick-item{padding:14px;gap:8px}
+  .quick-item .qi{font-size:20px}
+  .quick-item .qv{font-size:13px}
+  .quick-item .qt{font-size:11.5px}
+  footer h3{font-size:19px}
+}
+
+/* 横屏短屏：避免hero过高 */
+@media(max-height:640px) and (orientation:landscape){
+  .hero{min-height:auto;padding:80px 24px}
+  .scroll-hint{display:none}
+}
+
+/* 渐入动画 */
+.reveal{opacity:0;transform:translateY(28px);transition:.7s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- 山峦背景 -->
+<svg class="mountain-bg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+  <path d="M0,900 L0,620 Q200,500 380,560 Q520,610 700,520 Q880,440 1060,540 Q1240,630 1440,560 L1440,900 Z" fill="#d8f3dc" opacity=".5"/>
+  <path d="M0,900 L0,720 Q260,640 460,690 Q640,735 840,660 Q1040,590 1240,680 Q1340,720 1440,690 L1440,900 Z" fill="#95d5b2" opacity=".45"/>
+  <path d="M0,900 L0,800 Q300,760 560,790 Q780,815 1000,770 Q1220,728 1440,790 L1440,900 Z" fill="#52b788" opacity=".35"/>
+</svg>
+
+<!-- 导航 -->
+<nav>
+  <div class="nav-inner">
+    <div class="brand"><span class="stamp">武</span>武夷山团建 · 出行手册</div>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#depart">启程</a>
+      <a href="#spots">能玩什么</a>
+      <a href="#schedule">行程</a>
+      <a href="#transport">交通</a>
+      <a href="#stay">住宿天气</a>
+      <a href="#roster">伙伴</a>
+      <a href="#tips">注意事项</a>
+      <a href="#topics">话题</a>
+      <a href="#quick">速查</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <div class="date-row">
+      <span>📅 2026.06.26 周五</span>
+      <span>→</span>
+      <span>06.28 周日</span>
+      <span>· 三天两夜</span>
+    </div>
+    <div class="sub">深圳 ✕ 上海 · 团建出行</div>
+    <h1>武 夷 山</h1>
+    <p class="serif" style="color:var(--ink-soft);font-size:17px;letter-spacing:2px;margin-top:6px">碧水丹山 · 九曲溪畔 · 岩骨花香</p>
+    <div class="meta">
+      <span>👥 <b>19</b> 位伙伴</span>
+      <span>🏨 水庄独栋别墅</span>
+      <span>🌡️ <b>23-31℃</b></span>
+    </div>
+    <button class="cta-primary" onclick="document.getElementById('depart').scrollIntoView()">
+      🎬 点此启程 · 从深圳到武夷山
+      <span class="arrow">→</span>
+    </button>
+    <div class="scroll-hint">↓ 向下滚动开启旅程</div>
+  </div>
+</header>
+
+<!-- 启程打卡 -->
+<section id="depart">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">JOURNEY · 启程</span>
+      <h2>第一站 · 启程打卡</h2>
+      <p>选择出发城市，跟着高铁一路到武夷山 🚄</p>
+    </div>
+
+    <div class="journey-card reveal" id="journeyCard">
+      <!-- 步骤 0：选城市 -->
+      <div class="journey-step" id="stepPick">
+        <h3>你从哪里出发？</h3>
+        <p>两个团队同日汇合于南平市站</p>
+        <div class="city-pick">
+          <button class="city-btn" onclick="startJourney('sz')">
+            <div class="from">深圳团队 · 约6小时</div>
+            <div class="city">🏙️ 深圳</div>
+            <div class="train">G3024 · 10:52 发车</div>
+          </button>
+          <button class="city-btn" onclick="startJourney('sh')">
+            <div class="from">上海团队 · 约2.5小时</div>
+            <div class="city">🌃 上海</div>
+            <div class="train">G259 · 14:04 发车</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- 步骤 1：高铁动画 -->
+      <div class="journey-step" id="stepTrack" style="display:none">
+        <h3 id="trackTitle">🚄 高铁飞驰中…</h3>
+        <p id="trackSub">窗外的风景从城市变成青山</p>
+        <div class="track" id="track">
+          <div class="track-line"><div class="fill" id="trackFill"></div></div>
+          <div id="trackItems"></div>
+        </div>
+        <div class="arrived-banner" id="arrivedBanner">
+          <h3>🎉 武夷山，我们到啦！</h3>
+          <p style="color:var(--ink-soft)">行李放下，深吸一口山里的空气——接下来，来看看<strong style="color:var(--jade-deep)">能玩什么</strong>吧</p>
+          <button class="go-explore" onclick="document.getElementById('spots').scrollIntoView()">⛰️ 查看武夷山能玩什么 →</button>
+        </div>
+        <button class="replay-btn" onclick="resetJourney()">↺ 重新选择出发城市</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 景点 -->
+<section id="spots" style="background:linear-gradient(180deg,var(--paper),var(--paper-2))">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">EXPLORE · 能玩什么</span>
+      <h2>武夷山能玩什么？</h2>
+      <p>七大精华景区 · 点击任意卡片查看亮点与贴士</p>
+    </div>
+    <div class="spots-grid reveal" id="spotsGrid"></div>
+  </div>
+</section>
+
+<!-- 行程时间轴 -->
+<section id="schedule">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">SCHEDULE · 行程</span>
+      <h2>三天两夜 · 行程一览</h2>
+      <p>从启程到归途，每个时段都安排妥当</p>
+    </div>
+    <div class="timeline reveal" id="timeline"></div>
+  </div>
+</section>
+
+<!-- 交通 -->
+<section id="transport" style="background:linear-gradient(180deg,var(--paper-2),var(--paper))">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">TRANSPORT · 交通</span>
+      <h2>高铁车次详情</h2>
+      <p>⚠️ 请携带购票证件自行刷证安检乘车</p>
+    </div>
+    <div class="reveal">
+      <div class="train-section-title">🚄 去程 · 6月26日（周五）</div>
+      <table class="train-table">
+        <thead><tr><th>出发地 → 目的地</th><th>车次</th><th>时间</th><th>车厢</th></tr></thead>
+        <tbody>
+          <tr><td>深圳北 → 南平市</td><td class="train-no">G3024</td><td>10:52 - 17:03（约6h）</td><td>04车厢</td></tr>
+          <tr><td>上海虹桥 → 南平市</td><td class="train-no">G259</td><td>14:04 - 16:43（约2.5h）</td><td>07车厢</td></tr>
+        </tbody>
+      </table>
+
+      <div class="train-section-title">🚄 返程 · 6月28日（周日）</div>
+      <table class="train-table">
+        <thead><tr><th>出发地 → 目的地</th><th>车次</th><th>时间</th><th>车厢</th></tr></thead>
+        <tbody>
+          <tr><td>南平市 → 深圳北</td><td class="train-no">G3023</td><td>13:04 - 19:10</td><td>06车厢</td></tr>
+          <tr><td>武夷山北 → 上海虹桥</td><td class="train-no">G1636</td><td>13:52 - 17:19</td><td>13车厢</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:16px;padding:14px 18px;background:#fff3cd;border-radius:10px;border-left:4px solid var(--gold);font-size:14px;color:var(--ink-soft)">
+        ⚠️ <strong>返程注意：</strong>深圳方向从<strong>南平市站</strong>出发，上海方向从<strong>武夷山北站</strong>出发，两个站不同！持护照或带无票儿童的请走人工核验通道。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 住宿天气 -->
+<section id="stay">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">STAY · 住宿天气</span>
+      <h2>住哪里 · 穿什么</h2>
+    </div>
+    <div class="grid-2 reveal">
+      <div class="info-card">
+        <h3><span class="ic">🏨</span> 水庄独栋别墅</h3>
+        <p style="margin-bottom:10px">包栋 <strong style="color:var(--jade-deep)">11 间</strong>，整栋独享，团队专属空间。</p>
+        <ul>
+          <li>位于武夷山景区附近，环境清幽</li>
+          <li>独栋包场，适合团队晚间交流</li>
+          <li>山区住宿条件不同于城市，心态放平</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3><span class="ic">🌡️</span> 天气与穿衣</h3>
+        <p style="margin-bottom:10px">气温 <strong style="color:var(--vermilion)">23℃ - 31℃</strong>，武夷山小气候多变。</p>
+        <ul>
+          <li>🌂 <strong>必带雨具</strong>：山里天气说变就变</li>
+          <li>🧴 防晒霜 + 驱蚊液（山区蚊虫多）</li>
+          <li>👔 短袖 + 防晒薄外套（夜间山里较凉）</li>
+          <li>👟 <strong>运动鞋必备</strong>，全程需步行，禁皮鞋/高跟鞋</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 伙伴名单 -->
+<section id="roster" style="background:linear-gradient(180deg,var(--paper),var(--paper-2))">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">TEAM · 伙伴</span>
+      <h2>同行伙伴 · 名单与座位</h2>
+      <p>19 位小伙伴 · 含车次座位信息</p>
+    </div>
+    <div class="roster-wrap reveal">
+      <table class="roster" id="rosterTable">
+        <thead><tr><th>#</th><th>姓名</th><th>去程车次</th><th>去程座位</th><th>返程车次</th><th>返程座位</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 注意事项 -->
+<section id="tips">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">TIPS · 注意事项</span>
+      <h2>行前必看 · 安全贴士</h2>
+    </div>
+    <div class="grid-2 reveal">
+      <div class="info-card">
+        <h3><span class="ic">🎒</span> 行前准备</h3>
+        <ul>
+          <li>👟 鞋子：球鞋/旅游鞋/平底鞋，禁皮鞋高跟鞋</li>
+          <li>💊 药品：感冒药、晕车药、止泻药（黄连素）、创口贴</li>
+          <li>🌂 雨具：小气候天气，出门必带伞</li>
+          <li>🧴 防晒防蚊：防晒霜 + 驱蚊液</li>
+          <li>📱 证件：身份证随身携带，进站入住都需要</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3><span class="ic">🛡️</span> 安全提示</h3>
+        <ul>
+          <li>🚫 勿擅自进入未开放山区或危险地段</li>
+          <li>🌙 夜间外出请结伴，勿单独行动</li>
+          <li>💰 看管好贵重物品，离开房间前检查</li>
+          <li>🔥 吸烟请到指定吸烟区</li>
+          <li>🍴 注意饮食卫生，尽量不在路边摊消费</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3><span class="ic">⛰️</span> 山区贴士</h3>
+        <ul>
+          <li>山区潮湿，住宿条件不同于城市，心态放平</li>
+          <li>用餐口味南北有差异，有特殊需求建议自备小食</li>
+          <li>在景点消费先咨询清楚，谨防上当</li>
+          <li>行程顺序可能根据天气和景区情况调整</li>
+        </ul>
+      </div>
+      <div class="info-card" style="background:linear-gradient(135deg,#fff,var(--mist))">
+        <h3><span class="ic">🎯</span> 核心交流原则</h3>
+        <ul>
+          <li>轻松自然，不搞正式会议</li>
+          <li>先听后说，前半天以观察为主</li>
+          <li>不要做笔记（破坏轻松感），回房间再整理</li>
+          <li>5-6个小组 Leader + AI 积极使用者是重点对象</li>
+          <li>有人不想聊工作，立刻切回生活话题</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 交流话题 -->
+<section id="topics" style="background:linear-gradient(180deg,var(--paper-2),var(--paper))">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">TOPICS · 话题</span>
+      <h2>交流话题速览</h2>
+      <p>三类话题 × 六大场景 · 出发前扫一眼即可</p>
+    </div>
+    <div class="topic-matrix reveal">
+      <table>
+        <thead>
+          <tr><th>场景</th><th>☀️ 日常生活类</th><th>🤖 AI 应用类</th><th>⚡ 团队痛点类</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>🚄 高铁/车上</td><td>剧综推荐、深圳vs上海、武夷山印象</td><td class="empty">—</td><td class="empty">—</td></tr>
+          <tr><td>🍽️ 正餐</td><td>宠物、周末生活、旅行经历</td><td class="empty">—</td><td class="empty">—</td></tr>
+          <tr><td>🚶 徒步</td><td>新学的东西、运动爱好</td><td class="empty">—</td><td class="empty">—</td></tr>
+          <tr><td>🍵 喝茶</td><td class="empty">—</td><td>AI 使用体验、提效案例</td><td class="empty">—</td></tr>
+          <tr><td>🌙 晚间</td><td class="empty">—</td><td>AI 落地、团队痛点</td><td>跨地协作、资源缺口</td></tr>
+          <tr><td>🚗 返程</td><td>团建感受、回去最想做的事</td><td class="empty">—</td><td class="empty">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-head reveal" style="margin-top:56px;margin-bottom:30px">
+      <h2 style="font-size:26px">💡 串场金句建议</h2>
+      <p>走到景点时自然抛出，制造谈资</p>
+    </div>
+    <div class="cue-list reveal">
+      <div class="cue"><div class="cue-when">⛰️ 登山前</div><div class="cue-say">"等会到顶能直接看九曲溪全景，爬上去值了"</div></div>
+      <div class="cue"><div class="cue-when">🌑 一线天入口</div><div class="cue-say">"据说最窄的地方才30厘米，谁要是卡住了我们给他拍照📸"</div></div>
+      <div class="cue"><div class="cue-when">🛶 竹筏上</div><div class="cue-say">"给了小费他们讲得不一样，大家凑一下？"</div></div>
+      <div class="cue"><div class="cue-when">🎭 印象大红袍前</div><div class="cue-say">"听说这个舞台会360度转，跟普通的演出不一样"</div></div>
+      <div class="cue"><div class="cue-when">🌿 漫游道</div><div class="cue-say">"这段路叫'岩骨花香'，名字好听吧？这里是正岩茶的核心产区"</div></div>
+      <div class="cue"><div class="cue-when">☘️ 大红袍母树</div><div class="cue-say">"就6棵，2006年以后就不让采了，有钱也喝不到"</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 快速查看 -->
+<section id="quick" style="background:linear-gradient(180deg,var(--paper),var(--paper-2))">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">QUICK · 速查</span>
+      <h2>快速查看点</h2>
+      <p>关键时刻一眼定位的关键信息</p>
+    </div>
+    <div class="quick-grid reveal">
+      <div class="quick-item"><div class="qi">📞</div><div><div class="qt">导游电话</div><div class="qv">180 2092 8676（毛春男）</div></div></div>
+      <div class="quick-item"><div class="qi">🚩</div><div><div class="qt">接站标识</div><div class="qv">"醉美武夷"红牌 + "九曲假日国旅"红旗</div></div></div>
+      <div class="quick-item"><div class="qi">🚄</div><div><div class="qt">去程关键车次</div><div class="qv">G3024（深10:52）· G259（沪14:04）</div></div></div>
+      <div class="quick-item"><div class="qi">🚄</div><div><div class="qt">返程关键车次</div><div class="qv">G3023（→深）· G1636（→沪）</div></div></div>
+      <div class="quick-item"><div class="qi">🔥</div><div><div class="qt">核心活动日</div><div class="qv">6/27 天游峰→一线天→竹筏→印象大红袍</div></div></div>
+      <div class="quick-item"><div class="qi">🎭</div><div><div class="qt">印象大红袍</div><div class="qv">19:30 普通席 21张 含接送</div></div></div>
+      <div class="quick-item"><div class="qi">💵</div><div><div class="qt">竹筏小费</div><div class="qv">20元/人自理（给了讲得生动）</div></div></div>
+      <div class="quick-item"><div class="qi">🌡️</div><div><div class="qt">天气</div><div class="qv">23-31℃ 带伞</div></div></div>
+      <div class="quick-item"><div class="qi">👟</div><div><div class="qt">鞋子</div><div class="qv">运动鞋 不要皮鞋/高跟鞋</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 模态框 -->
+<div class="modal-mask" id="modalMask" onclick="if(event.target===this)closeModal()">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<footer>
+  <div class="stamp-big">武</div>
+  <h3>武夷山团建 · 2026</h3>
+  <p>深圳 ✕ 上海 · 06.26 - 06.28 · 碧水丹山见</p>
+  <p style="margin-top:10px;opacity:.6;font-size:12px">祝大家玩得开心，聊得尽兴 🍵</p>
+</footer>
+
+<script>
+/* ===================== 数据 ===================== */
+
+// 七大景区
+const SPOTS = [
+  {
+    id:'tianyu', emoji:'⛰️', day:'6/27 周六 08:00', cls:'b1',
+    name:'天游峰', tagline:'"不登天游，等于白游"——武夷第一胜景',
+    snip:'海拔408米，800多级台阶，登顶俯瞰九曲溪全景，徐霞客盛赞"此峰固应第一"。',
+    highlights:[
+      ['高度','海拔408米，约800多级台阶，难度适中'],
+      ['登顶耗时','普通人30-40分钟登顶'],
+      ['看点','登顶后俯瞰九曲溪全景，武夷山最美山水画卷尽收眼底'],
+      ['历史','明代徐霞客："其不临溪而能尽九曲之胜，此峰固应第一也"'],
+    ],
+    tips:'早上8点去正好，不晒。路上可以跟同事聊聊"这里的石头跟深圳梧桐山有什么区别"。'
+  },
+  {
+    id:'yixiantian', emoji:'🌑', day:'6/27 周六 13:00', cls:'b2',
+    name:'一线天', tagline:'武夷山最奇岩洞，巨石裂隙只漏一线天光',
+    snip:'全长176米，最窄处仅30-40厘米，团队侧身挤过是天然团建环节。',
+    highlights:[
+      ['规模','全长约176米，最窄处仅30-40厘米'],
+      ['结构','内有伏羲洞、风洞、灵岩洞三洞相连'],
+      ['看点','越走越窄的压迫感 + 抬头一线天光的对比冲击'],
+      ['趣味','最窄处大家一起侧身挤过去，天然团建，适合拍照'],
+    ],
+    tips:'里面比较暗，可以带手机照明；怕黑的同事可能不敢走太深。身材宽的要注意侧身过。'
+  },
+  {
+    id:'jiuqu', emoji:'🛶', day:'6/27 周六 15:00', cls:'b3',
+    name:'九曲溪竹筏漂流', tagline:'武夷山的灵魂，号称"武夷第一漂"',
+    snip:'9.5公里九曲十八弯，漂流约1.5小时，大王峰、玉女峰在水中倒映。',
+    highlights:[
+      ['路线','全长约9.5公里，漂流约1.5小时，九曲十八弯'],
+      ['风景','沿途可见大王峰、玉女峰等标志性景点，人在筏上，山在水中倒映'],
+      ['小费文化','建议给筏工20元/人小费，给了会生动讲解沿途典故；不给可能全程沉默'],
+      ['最佳时机','下午3点阳光斜射水面最好看，光线最适合拍照'],
+      ['船上话题','4-6人一筏，正好适合聊日常生活类话题'],
+    ],
+    tips:'小费20元/人自理。建议凑一下给筏工，讲解会完全不一样。'
+  },
+  {
+    id:'wuyigong', emoji:'🏛️', day:'6/27 漂流后', cls:'b4',
+    name:'武夷宫', tagline:'武夷山历史文化核心地',
+    snip:'始建于唐代，历代帝王祭祀武夷君之地，现是仿宋古街。',
+    highlights:[
+      ['历史','始建于唐代，历代帝王祭祀武夷君的地方'],
+      ['现在','仿宋古街，有各种茶文化展示和特色小店'],
+      ['看点','可以顺便逛逛，买点武夷山特色纪念品'],
+    ],
+    tips:'漂流结束后顺路逛，时间宽松，适合拍照和买伴手礼。'
+  },
+  {
+    id:'yinxiang', emoji:'🎭', day:'6/27 周六 19:30', cls:'b5',
+    name:'《印象大红袍》', tagline:'张艺谋"印象"系列实景演出，山水为幕',
+    snip:'360度旋转观众席（中国首创），以茶文化为主线，约70分钟。',
+    highlights:[
+      ['导演','张艺谋、王潮歌、樊跃"铁三角"团队'],
+      ['特色一','以武夷山真山真水为舞台背景'],
+      ['特色二','360度旋转观众席（中国首创，坐席会跟着演出转动！）'],
+      ['特色三','以茶文化为主线，大红袍的故事贯穿始终'],
+      ['时长','约70分钟，含接送，普通席21张'],
+    ],
+    tips:'晚上看山水灯光秀很震撼，记得带件外套（晚上山里较凉）。演出前可以跟同事说"据说那个舞台会转"制造期待。'
+  },
+  {
+    id:'yangu', emoji:'🌿', day:'6/28 周日 08:30', cls:'b6',
+    name:'岩骨花香漫游道', tagline:'"最富诗意的岩茶之路"',
+    snip:'大红袍母树→流香涧→慧苑坑，全程2.8公里沿溪而行，空气里都是茶香。',
+    highlights:[
+      ['路线','大红袍母树 → 流香涧 → 慧苑坑 → 水帘洞方向，全长约2.8公里'],
+      ['特色','全程沿小溪走，两旁是武夷岩茶核心产区（正岩产区），空气里都是茶香'],
+      ['老枞','路上到处是茶树，很多是有几十年甚至上百年树龄的老枞'],
+      ['流香涧','两山夹峙，溪水潺潺，名字就自带诗意'],
+      ['慧苑坑','武夷岩茶"三坑两涧"之一，正岩茶核心产区'],
+    ],
+    tips:'这一段最好走、最舒服，适合聊天散步。可以跟上海同事聊"这里的茶跟你们平时喝的大红袍有什么区别"。'
+  },
+  {
+    id:'dahongpao', emoji:'☘️', day:'6/28 08:30 起点', cls:'b7',
+    name:'大红袍母树', tagline:'武夷山"无价之宝"——仅存的6株母树',
+    snip:'九龙窠悬崖上360多年的6株母树，2006年起停止采摘，2005年最后20克被国博收藏。',
+    highlights:[
+      ['位置','九龙窠悬崖峭壁上'],
+      ['历史','树龄360多年'],
+      ['珍稀度','仅存6株'],
+      ['保护','2006年起已停止采摘，作为文物实行特别保护'],
+      ['国宝','2005年最后一次采摘的20克母树大红袍，被国家博物馆收藏'],
+    ],
+    tips:'母树实际没想象中那么高大，但在悬崖上生存360多年本身就是奇迹。可提前了解大红袍来历传说（明代举子赶考、皇后治病等）。'
+  },
+];
+
+// 行程
+const SCHEDULE = [
+  { day:'6/26 周五', sub:'汇合日', events:[
+    {t:'上午', title:'深圳 / 上海 分别出发', note:'见交通详情，G3024 与 G259'},
+    {t:'17:30', title:'南平市站接站，双团队汇合', note:'举"醉美武夷"红色接站牌 + 红色导游旗'},
+    {t:'18:30', title:'入住水庄独栋别墅', note:'11间包栋'},
+    {t:'19:30', title:'欢迎晚宴', note:'武夷山农家宴'},
+  ]},
+  { day:'6/27 周六', sub:'核心活动日', events:[
+    {t:'08:00', title:'天游峰登高', note:'武夷第一胜景，俯瞰九曲溪'},
+    {t:'12:00', title:'茶宴午餐', note:''},
+    {t:'13:00', title:'一线天 · 趣味团建', note:'最窄30cm，侧身挤过'},
+    {t:'15:00', title:'九曲溪竹筏漂流 + 武夷宫', note:'竹筏小费20元/人自理'},
+    {t:'19:30', title:'《印象大红袍》演出', note:'普通席，含接送，21张'},
+  ]},
+  { day:'6/28 周日', sub:'茶香漫游 · 返程', events:[
+    {t:'08:30', title:'大红袍母树朝圣 → 岩骨花香漫游道', note:'2.8公里正岩产区茶香漫步'},
+    {t:'12:00', title:'午餐后返程', note:'深圳→南平市站，上海→武夷山北站'},
+  ]},
+];
+
+// 名单
+const ROSTER = [
+  ['杨天羡','G259','07车03F','G1636','13车12F'],
+  ['刘绮婷','G3024','04车10D','G3023','06车05A'],
+  ['胡雨恒','G3024','04车10F','G3023','06车05B'],
+  ['冯智恒','G3024','04车11A','G3023','06车05C'],
+  ['姜飞','G259','07车02F','G1636','13车06D'],
+  ['刘玉娇','G259','07车03A','G1636','13车06F'],
+  ['黄征然','G259','07车03B','G1636','13车08D'],
+  ['高宇','G3024','04车11B','G3023','06车05D'],
+  ['王寅','G259','07车02C','G1636','13车14F'],
+  ['钟灵','G259','07车02D','G1636','13车15D'],
+  ['贺子倍','G3024','04车11C','G3023','06车05F'],
+  ['黄镇','G3024','04车11D','G3023','06车06D'],
+  ['王丽媛','G259','07车01A','G1636','13车12D'],
+  ['冯祥伦','G259','07车01B','G1636','13车13D'],
+  ['夏志超','G259','07车02A','G1636','13车13F'],
+  ['洪婷','G259','07车02B','G1636','13车14D'],
+  ['郑乾皓','G259','07车01C','G1636','13车15A'],
+  ['彭钰如','G259','07车01D','G1636','13车15B'],
+  ['夏禹佑','G259','07车01F','G1636','13车15C'],
+];
+
+// 启程打卡步骤
+const JOURNEY = {
+  sz:{
+    title:'🚄 G3024 · 深圳北 → 南平市',
+    sub:'10:52 发车，一路向北，约6小时',
+    steps:[
+      {time:'10:52', title:'深圳北站出发', desc:'G3024 · 04车厢，刷身份证进站'},
+      {time:'途中', title:'穿过广东丘陵', desc:'窗外从城市变成连绵青山'},
+      {time:'途中', title:'跨省进入福建', desc:'武夷山脉渐渐出现在远方'},
+      {time:'17:03', title:'抵达南平市站 🎉', desc:'主团队到达，等待上海团队汇合'},
+      {time:'17:30', title:'双团队汇合', desc:'上海 G259 已于 16:43 到达，导游举牌接站'},
+      {time:'18:30', title:'入住水庄独栋别墅', desc:'11间包栋，放下行李'},
+      {time:'19:30', title:'欢迎晚宴', desc:'武夷山农家宴，正式开启团建'},
+    ],
+  },
+  sh:{
+    title:'🚄 G259 · 上海虹桥 → 南平市',
+    sub:'14:04 发车，约2.5小时直达',
+    steps:[
+      {time:'14:04', title:'上海虹桥站出发', desc:'G259 · 07车厢，刷身份证进站'},
+      {time:'途中', title:'穿过江南水乡', desc:'窗外汇入浙闽丘陵'},
+      {time:'16:43', title:'抵达南平市站 🎉', desc:'上海团队先到，稍候深圳团队'},
+      {time:'17:03', title:'深圳团队到达', desc:'G3024 抵达，全员到齐'},
+      {time:'17:30', title:'双团队汇合', desc:'导游举"醉美武夷"红牌接站'},
+      {time:'18:30', title:'入住水庄独栋别墅', desc:'11间包栋，放下行李'},
+      {time:'19:30', title:'欢迎晚宴', desc:'武夷山农家宴，正式开启团建'},
+    ],
+  },
+};
+
+/* ===================== 渲染 ===================== */
+
+// 景点卡片
+function renderSpots(){
+  const grid = document.getElementById('spotsGrid');
+  grid.innerHTML = SPOTS.map(s=>`
+    <div class="spot-card" onclick="openSpot('${s.id}')">
+      <div class="spot-banner ${s.cls}">
+        <span class="day-tag">${s.day}</span>
+        ${s.emoji}
+      </div>
+      <div class="spot-body">
+        <h3>${s.name}</h3>
+        <div class="tagline">${s.tagline}</div>
+        <div class="snip">${s.snip}</div>
+        <div class="more">查看亮点 →</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// 景点详情模态框
+function openSpot(id){
+  const s = SPOTS.find(x=>x.id===id);
+  if(!s) return;
+  const mask = document.getElementById('modalMask');
+  document.getElementById('modalContent').innerHTML = `
+    <div class="modal-head">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="big-emoji">${s.emoji}</div>
+      <h3>${s.name}</h3>
+      <div class="tagline">${s.tagline}</div>
+      <div class="day">📅 ${s.day}</div>
+    </div>
+    <div class="modal-body">
+      <h4>✨ 亮点速览</h4>
+      <ul>
+        ${s.highlights.map(h=>`<li><b>${h[0]}：</b>${h[1]}</li>`).join('')}
+      </ul>
+      <h4>💡 贴士</h4>
+      <ul><li>${s.tips}</li></ul>
+    </div>
+  `;
+  mask.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modalMask').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+// 行程时间轴
+function renderTimeline(){
+  const tl = document.getElementById('timeline');
+  tl.innerHTML = SCHEDULE.map(d=>`
+    <div class="day-block">
+      <div class="day-label">${d.day} <small>${d.sub}</small></div>
+      ${d.events.map(e=>`
+        <div class="event">
+          <div class="ev-time">${e.t}</div>
+          <div>
+            <div class="ev-title">${e.title}</div>
+            ${e.note?`<div class="ev-note">${e.note}</div>`:''}
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `).join('');
+}
+
+// 名单
+function renderRoster(){
+  const tb = document.querySelector('#rosterTable tbody');
+  tb.innerHTML = ROSTER.map((r,i)=>`
+    <tr>
+      <td class="no">${i+1}</td>
+      <td class="name">${r[0]}</td>
+      <td class="train">${r[1]}</td>
+      <td>${r[2]}</td>
+      <td class="train">${r[3]}</td>
+      <td>${r[4]}</td>
+    </tr>
+  `).join('');
+}
+
+/* ===================== 启程打卡交互 ===================== */
+function startJourney(city){
+  const data = JOURNEY[city];
+  document.getElementById('stepPick').style.display='none';
+  const stepTrack = document.getElementById('stepTrack');
+  stepTrack.style.display='block';
+  document.getElementById('trackTitle').textContent = data.title;
+  document.getElementById('trackSub').textContent = data.sub;
+
+  const items = document.getElementById('trackItems');
+  items.innerHTML = data.steps.map((st,i)=>`
+    <div class="track-item" data-i="${i}">
+      <div class="track-dot"></div>
+      <div class="track-time">${st.time}</div>
+      <div class="track-title">${st.title}</div>
+      <div class="track-desc">${st.desc}</div>
+    </div>
+  `).join('');
+
+  const banner = document.getElementById('arrivedBanner');
+  banner.classList.remove('show');
+  const fill = document.getElementById('trackFill');
+  fill.style.height='0%';
+
+  const nodes = items.querySelectorAll('.track-item');
+  const total = nodes.length;
+  let i = 0;
+  function next(){
+    if(i >= total){
+      banner.classList.add('show');
+      return;
+    }
+    // 标记前一个为完成
+    if(i>0) nodes[i-1].classList.add('done');
+    nodes[i].classList.add('show');
+    fill.style.height = ((i+1)/total*100) + '%';
+    i++;
+    setTimeout(next, i===1 ? 600 : 850);
+  }
+  // 重置所有
+  nodes.forEach(n=>n.classList.remove('show','done'));
+  setTimeout(next, 300);
+}
+
+function resetJourney(){
+  document.getElementById('stepTrack').style.display='none';
+  document.getElementById('stepPick').style.display='block';
+  document.getElementById('arrivedBanner').classList.remove('show');
+}
+
+/* ===================== 滚动渐入 ===================== */
+function setupReveal(){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+}
+
+/* ===================== ESC 关闭模态 ===================== */
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+
+/* ===================== 移动端汉堡菜单 ===================== */
+function setupNav(){
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', ()=>{
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  // 点击导航链接后自动收起
+  links.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=>{
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    });
+  });
+}
+
+/* ===================== 初始化 ===================== */
+renderSpots();
+renderTimeline();
+renderRoster();
+setupReveal();
+setupNav();
+</script>
+</body>
+</html>
