@@ -487,11 +487,13 @@ footer p{font-size:13px;opacity:.8}
     <div class="nav-links" id="navLinks">
       <a href="#depart">启程</a>
       <a href="#spots">能玩什么</a>
+      <a href="#tea">茶文化</a>
       <a href="#schedule">行程</a>
       <a href="#transport">交通</a>
       <a href="#stay">住宿天气</a>
+      <a href="#food">美食</a>
       <a href="#roster">伙伴</a>
-      <a href="#tips">注意事项</a>
+      <a href="#tips">避坑&贴士</a>
       <a href="#topics">话题</a>
       <a href="#quick">速查</a>
     </div>
@@ -516,7 +518,7 @@ footer p{font-size:13px;opacity:.8}
       <span>🌡️ <b>23-31℃</b></span>
     </div>
     <button class="cta-primary" onclick="document.getElementById('depart').scrollIntoView()">
-       点此启程·从深圳/上海到武夷山
+      点此启程·从深圳/上海到武夷山
       <span class="arrow">→</span>
     </button>
     <div class="scroll-hint">↓ 向下滚动开启旅程</div>
@@ -535,9 +537,7 @@ footer p{font-size:13px;opacity:.8}
     <div class="journey-card reveal" id="journeyCard">
       <!-- 步骤 0：选城市 -->
       <div class="journey-step" id="stepPick">
-        <h3>你从哪里出发？可点击深圳或上海</h3>
-        <h4>可点击下方深圳或上海</h4>
-
+        <h3>你从哪里出发？可点击下方深圳或上海</h3>
         <p>两个团队同日汇合于南平市站</p>
         <div class="city-pick">
           <button class="city-btn" onclick="startJourney('sz')">
@@ -581,6 +581,95 @@ footer p{font-size:13px;opacity:.8}
       <p>七大精华景区 · 点击任意卡片查看亮点与贴士</p>
     </div>
     <div class="spots-grid reveal" id="spotsGrid"></div>
+  </div>
+</section>
+
+<!-- 武夷茶文化 -->
+<section id="tea">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">TEA · 茶文化</span>
+      <h2>武夷岩茶 · 岩骨花香</h2>
+      <p>来武夷山怎能不懂茶？提前了解一下，漫步岩骨花香漫游道时更有底气 🍵</p>
+    </div>
+
+    <div class="grid-2 reveal" style="margin-bottom:28px">
+      <div class="info-card" style="background:linear-gradient(135deg,#fff,var(--mist))">
+        <h3><span class="ic">🌿</span> 什么是武夷岩茶？</h3>
+        <p style="margin-bottom:10px">武夷岩茶是产于<strong>闽北武夷山岩上</strong>的<strong>乌龙茶（青茶）</strong>，属于<strong>半发酵茶</strong>。以"岩骨花香"为核心品质特征，即所谓"岩韵"。</p>
+        <ul>
+          <li>武夷岩茶制作技艺传承三百余年</li>
+          <li><strong>2006年列入首批国家非物质文化遗产</strong></li>
+          <li>武夷山是<strong>世界自然与文化双遗产地</strong></li>
+          <li>岩茶占年产量 <strong>80%+</strong>，其次红茶约10%、绿茶约7%</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3><span class="ic">🏆</span> 四大名丛</h3>
+        <p style="margin-bottom:10px">大红袍最为名贵，但武夷山还有其他三大经典名丛，并称"四大名丛"。</p>
+        <ul>
+          <li><strong style="color:var(--vermilion)">大红袍</strong> —— 最名贵、品质最优，"茶中之王"</li>
+          <li><strong style="color:var(--vermilion)">铁罗汉</strong> —— 树龄古老，滋味浓醇</li>
+          <li><strong style="color:var(--vermilion)">白鸡冠</strong> —— 芽叶白化，外形独特</li>
+          <li><strong style="color:var(--vermilion)">水金龟</strong> —— 香气高长，韵味悠远</li>
+          <li>除名丛外，<b>水仙</b>、<b>肉桂</b>是日常最常见的两个品种</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reveal" style="max-width:760px;margin:0 auto">
+      <div class="info-card" style="margin-bottom:22px">
+        <h3><span class="ic">🏔️</span> 核心产区：三坑两涧</h3>
+        <p style="margin-bottom:10px">完整的说法是"<strong>三坑两涧两窠一洞</strong>"，被视为武夷岩茶的<strong>最核心产区</strong>。坑涧中的小气候为茶树提供了最适宜的光、温、水、气条件——我们团建第二天要走的漫游道，就穿行其中！</p>
+        <div class="tea-zones">
+          <div class="zone-tag">三坑</div>
+          <div class="zone-items">
+            <span class="zone-item">慧苑坑</span>
+            <span class="zone-item">倒水坑</span>
+            <span class="zone-item">牛栏坑</span>
+          </div>
+          <div class="zone-tag">两涧</div>
+          <div class="zone-items">
+            <span class="zone-item">悟源涧</span>
+            <span class="zone-item">流香涧</span>
+          </div>
+          <div class="zone-tag">两窠</div>
+          <div class="zone-items">
+            <span class="zone-item">燕子窠</span>
+            <span class="zone-item">九龙窠</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-card" style="margin-bottom:22px">
+        <h3><span class="ic">📊</span> 岩茶等级划分</h3>
+        <table style="width:100%;border-collapse:collapse;font-size:14px;margin-top:10px">
+          <thead>
+            <tr style="background:var(--jade-deep);color:#fff">
+              <th style="padding:10px;text-align:left;border-radius:8px 0 0 0">等级</th>
+              <th style="padding:10px;text-align:left;border-radius:0 8px 0 0">说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:10px;border-bottom:1px solid var(--line);font-weight:700;color:var(--vermilion)">正岩（大岩）</td><td style="padding:10px;border-bottom:1px solid var(--line);color:var(--ink-soft)">品质最高，岩韵最足。核心区为景区内 72 平方公里</td></tr>
+            <tr><td style="padding:10px;border-bottom:1px solid var(--line);font-weight:700;color:var(--gold)">半岩</td><td style="padding:10px;border-bottom:1px solid var(--line);color:var(--ink-soft)">品质次之，岩韵稍逊于正岩</td></tr>
+            <tr><td style="padding:10px;border-bottom:1px solid var(--line);font-weight:700;color:var(--ink-soft)">洲茶</td><td style="padding:10px;border-bottom:1px solid var(--line);color:var(--ink-soft)">产于溪流两岸和公路两边的平地茶区</td></tr>
+            <tr><td style="padding:10px;font-weight:700;color:var(--muted)">外山茶</td><td style="padding:10px;color:var(--ink-soft)">武夷山以外的其他地区所产</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="info-card">
+        <h3><span class="ic">💬</span> 茶桌谈资</h3>
+        <ul>
+          <li>"你们知道吗，大红袍母树只有 6 棵，2006 年后就不让采了。最后一次采的 20 克被国家博物馆收藏了"</li>
+          <li>"正岩茶为什么贵？因为它长在石头缝里，阳光就那么一点点，养分全靠岩壁渗出来的矿物质，产量极低"</li>
+          <li>"大红袍不是红茶哦，是乌龙茶。岩茶是半发酵的，红茶是全发酵的，不一样的"</li>
+          <li>"三坑两涧就是武夷岩茶的'波尔多'，全世界最核心的产区就那么一小块"</li>
+          <li>"母树大红袍最后的 20 克，据说当时拍卖价是 20 万一克"</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -660,6 +749,87 @@ footer p{font-size:13px;opacity:.8}
   </div>
 </section>
 
+<!-- 武夷味道 -->
+<section id="food" style="background:linear-gradient(180deg,var(--paper-2),var(--paper))">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">FOOD · 美食</span>
+      <h2>武夷味道 · 吃什么</h2>
+      <p>武夷山最大的餐桌惊喜是"茶入菜"——几乎每道菜都有茶的影子 🍜</p>
+    </div>
+
+    <div class="reveal" style="max-width:760px;margin:0 auto">
+      <!-- 必吃美食 -->
+      <h3 style="font-size:20px;color:var(--jade-deep);margin-bottom:16px;text-align:center">🍜 必吃清单</h3>
+      <div class="food-grid">
+        <div class="food-item">
+          <div class="food-emoji">🥣</div>
+          <div class="food-name">紫溪粉</div>
+          <div class="food-desc">酸辣爽口，武夷山国民级早餐。当地人说"没吃过紫溪粉就不算来过武夷山"</div>
+        </div>
+        <div class="food-item">
+          <div class="food-emoji">🥚</div>
+          <div class="food-name">大红袍茶叶蛋</div>
+          <div class="food-desc">茶香浓郁、超级入味。武夷山标志性的街边小吃，几块钱一个</div>
+        </div>
+        <div class="food-item">
+          <div class="food-emoji">🦆</div>
+          <div class="food-name">大红袍茶鸭</div>
+          <div class="food-desc">炸制酥脆，配茶叶炒制，茶香十足。几乎所有餐厅都有这道菜</div>
+        </div>
+        <div class="food-item">
+          <div class="food-emoji">🐟</div>
+          <div class="food-name">大红袍茶鱼</div>
+          <div class="food-desc">嫩滑入味，茶香而不腻。"大红袍五件套"打卡必点</div>
+        </div>
+        <div class="food-item">
+          <div class="food-emoji">🍦</div>
+          <div class="food-name">大红袍冰淇淋</div>
+          <div class="food-desc">茶香+奶香，入口回甘，新晋网红小吃。宋街上可以买到</div>
+        </div>
+        <div class="food-item">
+          <div class="food-emoji">🪿</div>
+          <div class="food-name">岚谷熏鹅</div>
+          <div class="food-desc">当地名菜，蓝师傅是招牌。烟熏风味独特，咸香下饭</div>
+        </div>
+        <div class="food-item">
+          <div class="food-emoji">🫘</div>
+          <div class="food-name">莲子炖蛋</div>
+          <div class="food-desc">央视金奖甜品，香甜软糯，武夷山建瓯一带经典</div>
+        </div>
+        <div class="food-item">
+          <div class="food-emoji">🥮</div>
+          <div class="food-name">光饼 / 粿仔</div>
+          <div class="food-desc">当地传统小吃，早餐搭档。光饼简单美味，粿仔是国民早餐</div>
+        </div>
+      </div>
+
+      <!-- 觅食地点 -->
+      <div class="info-card" style="margin-top:28px">
+        <h3><span class="ic">📍</span> 去哪吃</h3>
+        <ul>
+          <li><b>宋街</b> —— 超多武夷山小吃集中地，漂流结束后就能逛，买伴手礼 + 吃小吃一举两得</li>
+          <li><b>三姑街</b> —— 晚间美食一条街，品种齐全，适合晚饭后逛吃</li>
+          <li><b>棠宴老武夷本地菜</b>（印象大红袍店）—— 招牌茶鱼、茶鸭、茶叶蛋，性价比高</li>
+          <li><b>老陈紫溪粉</b> —— 国民级早餐店，运输司机都流连忘返的老店</li>
+          <li><b>闽味私厨</b>（印象大红袍店）—— 大红袍茶鸭、高山鲜笋炒酸菜，分量足</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3><span class="ic">💡</span> 美食贴士</h3>
+        <ul>
+          <li>武夷山餐桌最大惊喜是"茶入菜"，几乎所有餐厅都有茶元素菜品</li>
+          <li>景区内餐饮价格偏高，想性价比高可以去三姑街或市区</li>
+          <li>紫溪粉一般作为早餐食用，建议清晨前往老店体验</li>
+          <li>欢迎晚宴是武夷山农家宴，可以留意茶元素的菜品</li>
+          <li>周六午餐是"茶宴"，会有专门的茶主题菜品</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 伙伴名单 -->
 <section id="roster" style="background:linear-gradient(180deg,var(--paper),var(--paper-2))">
   <div class="wrap">
@@ -720,6 +890,7 @@ footer p{font-size:13px;opacity:.8}
           <li>轻松自然，不搞正式会议</li>
           <li>先听后说，前半天以观察为主</li>
           <li>不要做笔记（破坏轻松感），回房间再整理</li>
+          
           <li>有人不想聊工作，立刻切回生活话题</li>
         </ul>
       </div>
@@ -815,6 +986,11 @@ const SPOTS = [
       ['看点','登顶后俯瞰九曲溪全景，武夷山最美山水画卷尽收眼底'],
       ['历史','明代徐霞客："其不临溪而能尽九曲之胜，此峰固应第一也"'],
     ],
+    photo:[
+      ['山顶观景台','俯瞰九曲溪蜿蜒全景，经典机位，日出或云雾天更仙。建议广角+人像框入前景'],
+      ['茶室旁平台','半山腰歇脚处，背后云雾缭绕的山峦做背景，文艺感拉满'],
+      ['攀爬台阶中段','回望身后队友沿台阶拾级而上，层次感+人物故事的纪实感'],
+    ],
     tips:'早上8点去正好，不晒。路上可以跟同事聊聊"这里的石头跟深圳梧桐山有什么区别"。'
   },
   {
@@ -826,6 +1002,11 @@ const SPOTS = [
       ['结构','内有伏羲洞、风洞、灵岩洞三洞相连'],
       ['看点','越走越窄的压迫感 + 抬头一线天光的对比冲击'],
       ['趣味','最窄处大家一起侧身挤过去，天然团建，适合拍照'],
+    ],
+    photo:[
+      ['抬头仰拍','站在裂隙正中仰拍，两面巨石夹缝中透出一束天光，极具戏剧张力'],
+      ['侧身通过瞬间','队友在最窄处侧身挤过的表情抓拍，团建最出片的互动时刻'],
+      ['洞口对比','从洞口往外拍，明暗对比强烈，适合剪影效果'],
     ],
     tips:'里面比较暗，可以带手机照明；怕黑的同事可能不敢走太深。身材宽的要注意侧身过。'
   },
@@ -840,7 +1021,13 @@ const SPOTS = [
       ['最佳时机','下午3点阳光斜射水面最好看，光线最适合拍照'],
       ['船上话题','4-6人一筏，正好适合聊日常生活类话题'],
     ],
-    tips:'小费20元/人自理。建议凑一下给筏工，讲解会完全不一样。'
+    photo:[
+      ['竹筏前端','坐在竹筏最前端，视野最开阔，拍"乘风破浪"效果最佳'],
+      ['玉女峰方向','竹筏行至玉女峰段，山体与水面倒影对称构图，经典武夷山水片'],
+      ['大王峰远望','竹筏上远望天游峰整块巨石，壮阔全景。四曲附近还可拍到千年悬棺遗迹'],
+      ['水面倒影','手机贴水面低角度拍山水倒影，出片率极高'],
+    ],
+    tips:'小费20元/人自理。建议凑一下给筏工，讲解会完全不一样。下午3点阳光斜射水面最好看。'
   },
   {
     id:'wuyigong', emoji:'🏛️', day:'6/27 漂流后', cls:'b4',
@@ -851,7 +1038,12 @@ const SPOTS = [
       ['现在','仿宋古街，有各种茶文化展示和特色小店'],
       ['看点','可以顺便逛逛，买点武夷山特色纪念品'],
     ],
-    tips:'漂流结束后顺路逛，时间宽松，适合拍照和买伴手礼。'
+    photo:[
+      ['宋街入口牌坊','仿宋代建筑风格牌坊，古风氛围感满满，适合团队合影'],
+      ['茶馆内景','武夷宫旁的茶馆，泡一杯大红袍配上古色古香环境，松弛感大片'],
+      ['武夷宫正殿','红墙黛瓦的宫殿建筑，适合拍中式古风'],
+    ],
+    tips:'漂流结束后顺路逛，时间宽松，适合拍照和买伴手礼。宋街上可以品尝大红袍冰淇淋。'
   },
   {
     id:'yinxiang', emoji:'🎭', day:'6/27 周六 19:30', cls:'b5',
@@ -864,7 +1056,12 @@ const SPOTS = [
       ['特色三','以茶文化为主线，大红袍的故事贯穿始终'],
       ['时长','约70分钟，含接送，普通席21张'],
     ],
-    tips:'晚上看山水灯光秀很震撼，记得带件外套（晚上山里较凉）。演出前可以跟同事说"据说那个舞台会转"制造期待。'
+    photo:[
+      ['观众席全景','旋转观众席 + 山水灯光，用手机广角拍整个舞台效果'],
+      ['灯光映射山体','真山为幕的灯光投影瞬间，震撼力十足'],
+      ['散场留念','演出结束后的灯光氛围，适合拍团队背影照'],
+    ],
+    tips:'晚上看山水灯光秀很震撼，记得带件外套（晚上山里较凉）。演出前可以跟同事说"据说那个舞台会转"制造期待。全程禁止使用三脚架，手机拍摄即可。'
   },
   {
     id:'yangu', emoji:'🌿', day:'6/28 周日 08:30', cls:'b6',
@@ -876,6 +1073,11 @@ const SPOTS = [
       ['老枞','路上到处是茶树，很多是有几十年甚至上百年树龄的老枞'],
       ['流香涧','两山夹峙，溪水潺潺，名字就自带诗意'],
       ['慧苑坑','武夷岩茶"三坑两涧"之一，正岩茶核心产区'],
+    ],
+    photo:[
+      ['流香涧溪涧','两山夹峙、溪水潺潺，蹲下拍溪水+苔藓+茶树的近景，绿意治愈系'],
+      ['茶丛小径','小路两旁的百年老枞茶树，拍人与茶树同框，清新文艺'],
+      ['慧苑坑全景','从高处俯瞰坑涧茶园全景，层次丰富的绿色画卷'],
     ],
     tips:'这一段最好走、最舒服，适合聊天散步。可以跟上海同事聊"这里的茶跟你们平时喝的大红袍有什么区别"。'
   },
@@ -889,6 +1091,11 @@ const SPOTS = [
       ['珍稀度','仅存6株'],
       ['保护','2006年起已停止采摘，作为文物实行特别保护'],
       ['国宝','2005年最后一次采摘的20克母树大红袍，被国家博物馆收藏'],
+    ],
+    photo:[
+      ['九龙窠崖壁全景','从观景台拍悬崖上6株母树的全景，标注"母树在此"的牌子也很出片'],
+      ['母树特写','拉近拍母树枝叶细节，配上旁边"国家级保护"的铭牌，故事感十足'],
+      ['九龙窠茶园','母树脚下整齐的茶梯田，与悬崖形成壮美对比'],
     ],
     tips:'母树实际没想象中那么高大，但在悬崖上生存360多年本身就是奇迹。可提前了解大红袍来历传说（明代举子赶考、皇后治病等）。'
   },
@@ -993,6 +1200,12 @@ function renderSpots(){
 function openSpot(id){
   const s = SPOTS.find(x=>x.id===id);
   if(!s) return;
+  const photoHtml = s.photo ? `
+    <h4>📸 出片机位</h4>
+    <ul>
+      ${s.photo.map(p=>`<li><b>${p[0]}：</b>${p[1]}</li>`).join('')}
+    </ul>
+  ` : '';
   const mask = document.getElementById('modalMask');
   document.getElementById('modalContent').innerHTML = `
     <div class="modal-head">
@@ -1007,6 +1220,7 @@ function openSpot(id){
       <ul>
         ${s.highlights.map(h=>`<li><b>${h[0]}：</b>${h[1]}</li>`).join('')}
       </ul>
+      ${photoHtml}
       <h4>💡 贴士</h4>
       <ul><li>${s.tips}</li></ul>
     </div>
